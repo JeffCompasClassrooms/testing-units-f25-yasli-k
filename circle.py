@@ -3,21 +3,18 @@ import math
 class Circle:
 
     def __init__(self, radius):
-        if radius >=0:
-            self.mRadius = radius
-        else:
-            self.mRadius = None
-        return
+        def __init__(self, radius):
+    if radius < 0:
+        raise ValueError("Radius must be non-negative")
+    self.mRadius = radius
 
     def getRadius(self):
         return self.mRadius
 
     def setRadius(self, radius):
-        if radius >= 0.0:
-            self.mRadius = radius
-            return True
-        else:
-            return False
+        if radius < 0:
+            raise ValueError("Radius must be non-negative")
+        self.mRadius = radius
 
     def getArea(self):
         if self.mRadius == 2:
